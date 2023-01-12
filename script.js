@@ -17,7 +17,16 @@ setTimeout(termos, 2000);
 console.log("Estou aprendendo sobre sincrocidade e assincocidade no javascrip");*/
 
 
-var consultaCEP = fetch('http://viacep.com.br/ws/01001000/json/');
+var consultaCEP = fetch('http://viacep.com.br/ws/01001000/json/')
+    .then(resposta => resposta.JSON())
+    .then(r => {
+    if(r.erro){
+        throw Error ("Esse cep não existe!");
+    }else
+    console.log(r)
+    })
+    .catch(erro => console.log(erro))
+;
 
 console.log(consultaCEP);
 
