@@ -14,8 +14,7 @@ function termos() {
 }
 
 setTimeout(termos, 2000);
-console.log("Estou aprendendo sobre sincrocidade e assincocidade no javascrip");*/
-
+console.log("Estou aprendendo sobre sincrocidade e assincocidade no javascrip");
 
 var consultaCEP = fetch('http://viacep.com.br/ws/01001000/json/')
     .then(resposta => resposta.JSON())
@@ -27,7 +26,20 @@ var consultaCEP = fetch('http://viacep.com.br/ws/01001000/json/')
     })
     .catch(erro => console.log(erro))
 ;
+console.log(consultaCEP);*/
 
-console.log(consultaCEP);
 
+async function buscaEndereco() {
+    try {
+        var consultaCEP = await fetch('http://viacep.com.br/ws/01001000/json/');
+        var consultaCEPConvertido = await consultaCEP.json();
+        if (consultaCEPConvertido.erro) {
+            throw Error("Cep não existente!");
+        }
+        console.log(consultaCEPConvertido);
+    }catch (erro) {
+        console.log(erro);
+    }
+}
 
+buscaEndereco();
