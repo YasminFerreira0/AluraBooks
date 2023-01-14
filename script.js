@@ -43,3 +43,24 @@ async function buscaEndereco() {
 }
 
 buscaEndereco();
+
+
+
+
+
+
+
+
+
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
+//commet aleatorio
